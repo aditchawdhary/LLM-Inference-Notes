@@ -502,5 +502,23 @@ Successfully installed MarkupSafe-3.0.2 StrEnum-0.4.15 accelerate-1.10.0 aenum-3
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
 '
 
+```
+
+```bash
+Running the C++ executor examples:
+
+(main) root@C.25238311:/workspace$ git clone https://github.com/NVIDIA/TensorRT-LLM.git
+Cloning into 'TensorRT-LLM'...
+remote: Enumerating objects: 110493, done.
+remote: Counting objects: 100% (959/959), done.
+remote: Compressing objects: 100% (713/713), done.
+remote: Total 110493 (delta 659), reused 246 (delta 246), pack-reused 109534 (from 4)
+Receiving objects: 100% (110493/110493), 1.56 GiB | 14.60 MiB/s, done.
+Resolving deltas: 100% (77561/77561), done.
+Updating files: 100% (6153/6153), done.
+Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
+
+```
+
 
 
