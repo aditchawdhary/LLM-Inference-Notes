@@ -8,6 +8,8 @@ LLM inference notes
 # 2x H100 NVL
 # 1x RTX PRO 6000 WS
 # 1x H100 NVL
+# 1x H200 NVL - India
+
 
 
 # Commands for installation:
