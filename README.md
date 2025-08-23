@@ -524,40 +524,40 @@ Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
 
 ```bash
 1  python --version
-    2  pip3 --version
-    3  pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
-    4  git clone https://github.com/NVIDIA/TensorRT-LLM.git
-    5  cd TensorRT-LLM
-    6  git lfs install
-    7  python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
-    8  apt update
-    9  apt install -y libnuma-dev
-   10  pwd
-   11  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean
-   12  # Add NVIDIA's repository if not already added
-   13  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-   14  dpkg -i cuda-keyring_1.1-1_all.deb
-   15  apt update
-   16  # Install TensorRT development libraries
-   17  apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
-   18  python -c "import tensorrt as trt; print(trt.__file__)"
-   19  # Check what's available
-   20  find /venv/main/lib/python3.12/site-packages -name "*tensorrt*" -type d
-   21  ls -la /venv/main/lib/python3.12/site-packages/tensorrt*
-   22  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --tensorrt_root /venv/main/lib/python3.12/site-packages/tensorrt
-   23  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /venv/main/lib/python3.12/site-packages/tensorrt_libs
-   24  tar -xzf TensorRT-10.11.0.Linux.x86_64-gnu.cuda-12.8.tar.gz
-   25  wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
-   26  ls
-   27  tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
-   28  ls
-   29  sudo mv TensorRT-10.11.0.33 /usr/local/tensorrt
-   30  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
-   31  mpirun --version
-   32  mpiexec --version
-   33  mpirun --version
-   34  mpiexec --version
-   35  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
-   36  history
+2  pip3 --version
+3  pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
+4  git clone https://github.com/NVIDIA/TensorRT-LLM.git
+5  cd TensorRT-LLM
+6  git lfs install
+7  python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
+8  apt update
+9  apt install -y libnuma-dev
+10  pwd
+11  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean
+12  # Add NVIDIA's repository if not already added
+13  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+14  dpkg -i cuda-keyring_1.1-1_all.deb
+15  apt update
+16  # Install TensorRT development libraries
+17  apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
+18  python -c "import tensorrt as trt; print(trt.__file__)"
+19  # Check what's available
+20  find /venv/main/lib/python3.12/site-packages -name "*tensorrt*" -type d
+21  ls -la /venv/main/lib/python3.12/site-packages/tensorrt*
+22  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --tensorrt_root /venv/main/lib/python3.12/site-packages/tensorrt
+23  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /venv/main/lib/python3.12/site-packages/tensorrt_libs
+24  tar -xzf TensorRT-10.11.0.Linux.x86_64-gnu.cuda-12.8.tar.gz
+25  wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
+26  ls
+27  tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
+28  ls
+29  sudo mv TensorRT-10.11.0.33 /usr/local/tensorrt
+30  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
+31  mpirun --version
+32  mpiexec --version
+33  mpirun --version
+34  mpiexec --version
+35  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
+36  history
 ```
 
