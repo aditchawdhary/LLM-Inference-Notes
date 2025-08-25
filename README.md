@@ -10,7 +10,8 @@ LLM inference notes
 4. 1x H200 NVL - India
 5. 1x RTX 5090
 6. 1x H200 - France
-
+7. 1x H100 SXM
+ 
 <details>
   <summary>[RAW]Commands for installation:</summary>
   
