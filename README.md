@@ -46,7 +46,7 @@ Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
 
 ```
 
-## Checking Python version
+### Checking Python version
 ```bash
 python --version
 ```
@@ -54,6 +54,19 @@ Output
 ```bash
 Python 3.12.11
 ```
+### Checking Ubuntu version
+```
+lsb_release -a
+```
+Output
+```
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.2 LTS
+Release:        24.04
+Codename:       noble
+```
+
 <details>
   <summary>## Checking Pip version</summary>
   ```bash
@@ -80,6 +93,14 @@ Python 3.12.11
 ## Check CUDA version
 ```bash
 nvcc --version
+```
+Output
+```
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Tue_Oct_29_23:50:19_PDT_2024
+Cuda compilation tools, release 12.6, V12.6.85
+Build cuda_12.6.r12.6/compiler.35059454_0
 ```
 
 ## Cloning TensorRT-LLM from Github
