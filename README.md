@@ -62,7 +62,7 @@ pip3 --version
 pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
 ```
 
-## Pip installing TensorRT-LLM
+## Pip installing TensorRT-LLM – Not required if install C++ libraries, takes 15 mins
 ```bash
 pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
 ```
@@ -78,6 +78,18 @@ Collecting tensorrt-llm
 git clone https://github.com/NVIDIA/TensorRT-LLM.git
 cd TensorRT-LLM
 git lfs install
+```
+```bash
+(main) root@C.25296837:/venv/main/lib/python3.12/site-packages$ git clone https://github.com/NVIDIA/TensorRT-LLM.git
+Cloning into 'TensorRT-LLM'...
+remote: Enumerating objects: 110906, done.
+remote: Counting objects: 100% (126/126), done.
+remote: Compressing objects: 100% (94/94), done.
+remote: Total 110906 (delta 58), reused 36 (delta 32), pack-reused 110780 (from 2)
+Receiving objects: 100% (110906/110906), 1.55 GiB | 20.79 MiB/s, done.
+Resolving deltas: 100% (78265/78265), done.
+Updating files: 100% (6161/6161), done.
+Filtering content:  24% (600/2409), 206.70 MiB | 4.59 MiB/s
 ```
 
 ## Installing C++ dependencies
