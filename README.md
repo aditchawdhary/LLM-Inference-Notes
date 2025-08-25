@@ -54,27 +54,28 @@ python --version
 ```bash
 Python 3.12.11
 ```
-
-## Checking Pip version
-```bash
-pip3 --version
-```
-### Output
-```bash
-pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
-```
-
-## Pip installing TensorRT-LLM – Not required if install C++ libraries, takes 15 mins
-```bash
-pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
-```
-### Output
-```bash
-Looking in indexes: https://pypi.org/simple, https://pypi.nvidia.com/
-Collecting tensorrt-llm
-  Downloading https://pypi.nvidia.com/tensorrt-llm/tensorrt_llm-0.21.0-cp312-cp312-linux_x86_64.whl (3932.9 MB)
-     ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 GB 15.5 MB/s eta 0:04:07
-```
+<details>
+  <summary>## Checking Pip version</summary>summary>
+  ```bash
+  pip3 --version
+  ```
+  ### Output
+  ```bash
+  pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
+  ```
+  
+  ## Pip installing TensorRT-LLM – Not required if install C++ libraries, takes 15 mins
+  ```bash
+  pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
+  ```
+  ### Output
+  ```bash
+  Looking in indexes: https://pypi.org/simple, https://pypi.nvidia.com/
+  Collecting tensorrt-llm
+    Downloading https://pypi.nvidia.com/tensorrt-llm/tensorrt_llm-0.21.0-cp312-cp312-linux_x86_64.whl (3932.9 MB)
+       ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 GB 15.5 MB/s eta 0:04:07
+  ```
+</details>
 
 ## Cloning TensorRT-LLM from Github
 ```bash
