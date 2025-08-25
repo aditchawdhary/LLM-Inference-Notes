@@ -73,21 +73,28 @@ Collecting tensorrt-llm
      ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 GB 15.5 MB/s eta 0:04:07
 ```
 
+## Cloning TensorRT-LLM from Github
 ```bash
-4  git clone https://github.com/NVIDIA/TensorRT-LLM.git
-5  cd TensorRT-LLM
-6  git lfs install
-7  python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
-8  apt update
-9  apt install -y libnuma-dev
-10  pwd
-11  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean
-12  # Add NVIDIA's repository if not already added
-13  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-14  dpkg -i cuda-keyring_1.1-1_all.deb
-15  apt update
-16  # Install TensorRT development libraries
-17  apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
+git clone https://github.com/NVIDIA/TensorRT-LLM.git
+cd TensorRT-LLM
+git lfs install
+```
+
+## Installing C++ dependencies
+```bash
+python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
+apt update
+apt install -y libnuma-dev
+pwd
+python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean
+# Add NVIDIA's repository if not already added
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+dpkg -i cuda-keyring_1.1-1_all.deb
+apt update
+# Install TensorRT development libraries
+apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
+```
+
 18  python -c "import tensorrt as trt; print(trt.__file__)"
 19  # Check what's available
 20  find /venv/main/lib/python3.12/site-packages -name "*tensorrt*" -type d
