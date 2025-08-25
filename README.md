@@ -8,6 +8,8 @@ LLM inference notes
 2. 1x RTX PRO 6000 WS
 3. 1x H100 NVL
 4. 1x H200 NVL - India
+5. 1x RTX 5090
+6. 1x H200 - France
 
 <details>
   <summary>[RAW]Commands for installation:</summary>
