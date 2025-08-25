@@ -99,7 +99,17 @@ Filtering content:  24% (600/2409), 206.70 MiB | 4.59 MiB/s
 
 ## Installing C++ dependencies
 ```bash
+# Installing MPI
+sudo apt install openmpi-bin openmpi-common libopenmpi-dev
+mpirun --version
+mpiexec --version
+# Installing TensorRT
+wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
+tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
+# Running build_wheel.py
 python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
+
+
 apt update
 apt install -y libnuma-dev
 pwd
@@ -110,6 +120,7 @@ dpkg -i cuda-keyring_1.1-1_all.deb
 apt update
 # Install TensorRT development libraries
 apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
+
 ```
 
 ```
@@ -120,16 +131,10 @@ apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
 22  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --tensorrt_root /venv/main/lib/python3.12/site-packages/tensorrt
 23  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /venv/main/lib/python3.12/site-packages/tensorrt_libs
 24  tar -xzf TensorRT-10.11.0.Linux.x86_64-gnu.cuda-12.8.tar.gz
-25  wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 26  ls
-27  tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 28  ls
 29  sudo mv TensorRT-10.11.0.33 /usr/local/tensorrt
 30  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
-31  mpirun --version
-32  mpiexec --version
-33  mpirun --version
-34  mpiexec --version
 35  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
 36  history
 ```
