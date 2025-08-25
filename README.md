@@ -107,6 +107,7 @@ apt update
 apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
 ```
 
+```
 18  python -c "import tensorrt as trt; print(trt.__file__)"
 19  # Check what's available
 20  find /venv/main/lib/python3.12/site-packages -name "*tensorrt*" -type d
