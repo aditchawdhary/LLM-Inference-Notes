@@ -69,6 +69,7 @@ Codename:       noble
 
 <details>
   <summary>## Checking Pip version</summary>
+  
   ```bash
    pip3 --version
    ```
