@@ -13,7 +13,7 @@ LLM inference notes
 7. 1x H100 SXM
  
 <details>
-  <summary>[RAW]Commands for installation:</summary>
+  <summary>[RAW] Commands for installation:</summary>
   
   ```bash
   # Commands for installation:
