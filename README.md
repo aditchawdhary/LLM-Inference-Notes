@@ -23,6 +23,7 @@ LLM inference notes
   (main) root@C.25238311:/workspace$ pip3 --version
   # pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
   (main) root@C.25238311:/workspace$ pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
+  ```
 </details>
 
 
