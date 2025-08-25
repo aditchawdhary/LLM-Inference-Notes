@@ -50,7 +50,7 @@ Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
 ```bash
 python --version
 ```
-### Output
+Output
 ```bash
 Python 3.12.11
 ```
@@ -59,7 +59,7 @@ Python 3.12.11
   ```bash
    pip3 --version
    ```
-   ### Output
+   Output
    ```bash
    pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
    ```
@@ -68,7 +68,7 @@ Python 3.12.11
    ```bash
    pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
    ```
-   ### Output
+   Output
    ```bash
    Looking in indexes: https://pypi.org/simple, https://pypi.nvidia.com/
    Collecting tensorrt-llm
@@ -88,7 +88,7 @@ git clone https://github.com/NVIDIA/TensorRT-LLM.git
 cd TensorRT-LLM
 git lfs install
 ```
-### Output
+Output
 ```bash
 (main) root@C.25296837:/venv/main/lib/python3.12/site-packages$ git clone https://github.com/NVIDIA/TensorRT-LLM.git
 Cloning into 'TensorRT-LLM'...
