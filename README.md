@@ -77,6 +77,11 @@ Python 3.12.11
   ```
 </details>
 
+## Check CUDA version
+```bash
+nvcc --version
+```
+
 ## Cloning TensorRT-LLM from Github
 ```bash
 git clone https://github.com/NVIDIA/TensorRT-LLM.git
@@ -98,18 +103,24 @@ Filtering content:  24% (600/2409), 206.70 MiB | 4.59 MiB/s
 ```
 
 ## Installing C++ dependencies
+Installing MPI
 ```bash
-# Installing MPI
 sudo apt install openmpi-bin openmpi-common libopenmpi-dev
 mpirun --version
 mpiexec --version
-# Installing TensorRT
+```
+Installing TensorRT
+```bash
 wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
-# Running build_wheel.py
+```
+
+## Running build_wheel.py
+```bash
 python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
+```
 
-
+```bash
 apt update
 apt install -y libnuma-dev
 pwd
