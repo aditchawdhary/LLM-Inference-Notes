@@ -48,24 +48,26 @@ Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
 
 ```bash
 python --version
-
+```
+```bash
 Python 3.12.11
 ```
-
 ```bash
 pip3 --version
-
+```
+```bash
 pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
 ```
 ```bash
 pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
-
+```
+```bash
 Looking in indexes: https://pypi.org/simple, https://pypi.nvidia.com/
 Collecting tensorrt-llm
   Downloading https://pypi.nvidia.com/tensorrt-llm/tensorrt_llm-0.21.0-cp312-cp312-linux_x86_64.whl (3932.9 MB)
      ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 GB 15.5 MB/s eta 0:04:07
 ```
-
+```bash
 4  git clone https://github.com/NVIDIA/TensorRT-LLM.git
 5  cd TensorRT-LLM
 6  git lfs install
@@ -100,4 +102,5 @@ Collecting tensorrt-llm
 35  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
 36  history
 ```
+
 
