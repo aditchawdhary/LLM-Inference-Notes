@@ -46,18 +46,23 @@ Filtering content: 100% (2409/2409), 1.65 GiB | 21.40 MiB/s, done.
 
 ```
 
+## Checking Python version
 ```bash
 python --version
 ```
 ```bash
 Python 3.12.11
 ```
+
+## Checking Pip version
 ```bash
 pip3 --version
 ```
 ```bash
 pip 25.1.1 from /venv/main/lib/python3.12/site-packages/pip (python 3.12)
 ```
+
+## Pip installing TensorRT-LLM
 ```bash
 pip3 install tensorrt-llm --extra-index-url https://pypi.nvidia.com/
 ```
@@ -67,6 +72,7 @@ Collecting tensorrt-llm
   Downloading https://pypi.nvidia.com/tensorrt-llm/tensorrt_llm-0.21.0-cp312-cp312-linux_x86_64.whl (3932.9 MB)
      ━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 GB 15.5 MB/s eta 0:04:07
 ```
+
 ```bash
 4  git clone https://github.com/NVIDIA/TensorRT-LLM.git
 5  cd TensorRT-LLM
