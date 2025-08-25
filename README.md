@@ -2,14 +2,15 @@
 LLM inference notes
 
 ## TensorRT-LLM
+
+## Machines I have installed this on in the Cloud:
+1. 2x H100 NVL
+2. 1x RTX PRO 6000 WS
+3. 1x H100 NVL
+4. 1x H200 NVL - India
+
+
 ```bash
-
-# Machines I have installed this on in the Cloud:
-# 2x H100 NVL
-# 1x RTX PRO 6000 WS
-# 1x H100 NVL
-# 1x H200 NVL - India
-
 
 
 # Commands for installation:
