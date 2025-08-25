@@ -9,9 +9,9 @@ LLM inference notes
 3. 1x H100 NVL
 4. 1x H200 NVL - India
 
-
-```bash
-
+<details>
+  <summary>[RAW]Commands for installation:</summary>
+  ```bash
 
 # Commands for installation:
 pip3 install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
@@ -506,6 +506,8 @@ WARNING: Running pip as the 'root' user can result in broken permissions and con
 '
 
 ```
+
+</details>
 
 ```bash
 Running the C++ executor examples:
