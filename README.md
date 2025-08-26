@@ -136,16 +136,30 @@ Installing TensorRT, this can take upto 30 mins
 wget https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.11.0/tars/TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 ```
+Finding NCCL
+```bash
+find /usr /opt -name "libnccl.so*" 2>/dev/null
+```
+Output
+```bash
+/usr/lib/x86_64-linux-gnu/libnccl.so
+/usr/lib/x86_64-linux-gnu/libnccl.so.2
+/usr/lib/x86_64-linux-gnu/libnccl.so.2.23.4
+```
+
 
 ## Running build_wheel.py
 Make sure, trt_root is the directory which contains the files inside TRT not the directory which has the TRT directory, takes upto 1 hour
 ```bash
-python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33
+python3 ./scripts/build_wheel.py --benchmarks --cpp_only \
+  --clean --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33 \
+  --nccl_root=/usr/lib/x86_64-linux-gnu/
 ```
 
 Another command for H100 config, and faster build
 ```bash
 python3 ./scripts/build_wheel.py --cpp_only --clean --fast_build \
   --cuda_architectures="native" \
-  --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33
+  --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33 \
+  --nccl_root=/usr/lib/x86_64-linux-gnu/
 ```
