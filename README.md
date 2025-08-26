@@ -138,8 +138,9 @@ tar -xvf TensorRT-10.11.0.33.Linux.x86_64-gnu.cuda-12.9.tar.gz
 ```
 
 ## Running build_wheel.py
+Make sure, trt_root is the directory which contains the files inside TRT not the directory which has the TRT directory
 ```bash
-python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean
+python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33
 ```
 
 ```bash
