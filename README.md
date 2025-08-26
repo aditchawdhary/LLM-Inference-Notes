@@ -156,21 +156,3 @@ apt update
 apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
 
 ```
-
-```
-18  python -c "import tensorrt as trt; print(trt.__file__)"
-19  # Check what's available
-20  find /venv/main/lib/python3.12/site-packages -name "*tensorrt*" -type d
-21  ls -la /venv/main/lib/python3.12/site-packages/tensorrt*
-22  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --tensorrt_root /venv/main/lib/python3.12/site-packages/tensorrt
-23  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /venv/main/lib/python3.12/site-packages/tensorrt_libs
-24  tar -xzf TensorRT-10.11.0.Linux.x86_64-gnu.cuda-12.8.tar.gz
-26  ls
-28  ls
-29  sudo mv TensorRT-10.11.0.33 /usr/local/tensorrt
-30  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
-35  python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean     --trt_root /usr/local/tensorrt
-36  history
-```
-
-
