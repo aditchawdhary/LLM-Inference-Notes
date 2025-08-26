@@ -143,16 +143,9 @@ Make sure, trt_root is the directory which contains the files inside TRT not the
 python3 ./scripts/build_wheel.py --benchmarks --cpp_only --clean --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33
 ```
 
+Another command for H100 config, and faster build
 ```bash
-apt update
-apt install -y libnuma-dev
-pwd
-python3 ./scripts/build_wheel.py     --cuda_architectures "90-real"     --benchmarks     --cpp_only     --clean
-# Add NVIDIA's repository if not already added
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-dpkg -i cuda-keyring_1.1-1_all.deb
-apt update
-# Install TensorRT development libraries
-apt install -y tensorrt-dev libnvinfer-dev libnvonnxparsers-dev libnvparsers-dev
-
+python3 ./scripts/build_wheel.py --cpp_only --clean --fast_build \
+  --cuda_architectures="native" \
+  --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33
 ```
