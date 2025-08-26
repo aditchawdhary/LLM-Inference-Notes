@@ -163,3 +163,17 @@ python3 ./scripts/build_wheel.py --cpp_only --clean --fast_build \
   --trt_root=/workspace/TensorRT-LLM/TensorRT-10.11.0.33 \
   --nccl_root=/usr/lib/x86_64-linux-gnu/
 ```
+
+
+OUTPUT REACHED:
+```
+[ 54%] Built target _context_attention_kernels_90
+[ 54%] Linking CUDA device code CMakeFiles/cutlass_src.dir/cmake_device_link.o
+[ 54%] Linking CXX static library libcutlass_src.a
+[ 54%] Built target cutlass_src
+[ 54%] Linking CUDA device code CMakeFiles/low_latency_gemm_src.dir/cmake_device_link.o
+[ 54%] Linking CUDA static library liblow_latency_gemm_src.a
+[ 54%] Built target low_latency_gemm_src
+[ 54%] Built target selective_scan_src
+[ 54%] Built target _moe_gemm_src_instantiations_80
+```
