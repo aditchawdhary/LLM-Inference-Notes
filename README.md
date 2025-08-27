@@ -180,7 +180,22 @@ OUTPUT REACHED:
 
 ## VAST.AI
 ```
-vastai create instance <OFFER_ID> --image nvcr.io/nvidia/tensorrt-llm/release:latest --env '-p 8888:8888 -p 22:22 -e NVIDIA_VISIBLE_DEVICES=all -e CUDA_VISIBLE_DEVICES=all -e DOCKER_HOST=tcp://localhost:2376 --ipc=host --shm-size=32g --ulimit memlock=-1 --ulimit stack=67108864' --onstart-cmd 'entrypoint.sh;;#!/bin/bash;# Update system and install essentials;apt-get update && apt-get install -y htop vim git curl wget;;# Install Docker if not present;if ! command -v docker &> /dev/null; then curl -fsSL https://get.docker.com -o get-docker.sh;sh get-docker.sh;rm get-docker.sh;fi;;# Start Docker daemon in background;service docker start;dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2376 &;;# Wait for Docker daemon to be ready;sleep 5;while ! docker info &> /dev/null; do;echo "Waiting for Docker daemon to start...";sleep 2;done;;echo "Docker daemon is running";;# Install Jupyter if not present;pip install jupyter notebook ipywidgets matplotlib;;# Configure Jupyter;mkdir -p ~/.jupyter;cat > ~/.jupyter/jupyter_notebook_config.py << EOF;c.NotebookApp.ip = '\''0.0.0.0'\'';c.NotebookApp.port = 8888;c.NotebookApp.allow_root = True;c.NotebookApp.token = '\'''\'';c.NotebookApp.password = '\'''\'';EOF;;# Start Jupyter in background;nohup jupyter notebook --allow-root --no-browser &;;# Keep container running - THIS IS CRITICAL;tail -f /dev/null' --disk 80 --jupyter --ssh --direct
+vastai create instance <OFFER_ID> --image nvcr.io/nvidia/tensorrt-llm/release:latest --env \
+'-p 8888:8888 -p 22:22 -e NVIDIA_VISIBLE_DEVICES=all -e CUDA_VISIBLE_DEVICES=all -e \
+DOCKER_HOST=tcp://localhost:2376 --ipc=host --shm-size=32g --ulimit memlock=-1 --ulimit \
+ stack=67108864' --onstart-cmd 'entrypoint.sh;;#!/bin/bash;# Update system and install \
+essentials;apt-get update && apt-get install -y htop vim git curl wget;;# Install Docker \
+if not present;if ! command -v docker &> /dev/null; then curl -fsSL https://get.docker.com \
+-o get-docker.sh;sh get-docker.sh;rm get-docker.sh;fi;;# Start Docker daemon in background; \
+service docker start;dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2376 &;; \
+# Wait for Docker daemon to be ready;sleep 5;while ! docker info &> /dev/null; do;echo "Waiting \
+for Docker daemon to start...";sleep 2;done;;echo "Docker daemon is running";;# Install Jupyter \
+if not present;pip install jupyter notebook ipywidgets matplotlib;;# Configure Jupyter;mkdir -p \
+ ~/.jupyter;cat > ~/.jupyter/jupyter_notebook_config.py << EOF;c.NotebookApp.ip = '\''0.0.0.0'\''; \
+c.NotebookApp.port = 8888;c.NotebookApp.allow_root = True;c.NotebookApp.token = '\'''\''; \
+c.NotebookApp.password = '\'''\'';EOF;;# Start Jupyter in background;nohup jupyter notebook \
+--allow-root --no-browser &;;# Keep container running - THIS IS CRITICAL;tail -f /dev/null' \
+--disk 80 --jupyter --ssh --direct
 ```
 <img width="175" height="200" alt="image" src="https://github.com/user-attachments/assets/578e4ac5-5873-49cd-97ed-6ed7369e38a2" />
 <img width="175" height="235" alt="image" src="https://github.com/user-attachments/assets/450a41d0-9a12-426a-ba80-348e0ff09557" />
