@@ -234,9 +234,10 @@ python prepare_dataset.py \
     --output-mean 512 \
     --output-stdev 128
 ```
+### Push maximum concurrent requests
 1. Maximum Throughput Test:
 🔥 Extreme Stress Tests:
-### Push maximum concurrent requests
+
 ```
 /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
     --engine_dir /workspace/test_model/engine_stress \
@@ -248,8 +249,9 @@ python prepare_dataset.py \
     --log_level info \
     --log_iteration_data
 ```
-2. Memory Pressure Test:
+
 ### Test with maximum batch size and long sequences
+2. Memory Pressure Test:
 ```
 /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
     --engine_dir /workspace/test_model/engine_stress \
@@ -260,8 +262,9 @@ python prepare_dataset.py \
     --enable_batch_size_tuning \
     --log_level info
 ```
-3. Sustained Load Test:
+
 ### Long-running sustained load
+3. Sustained Load Test:
 ```
 /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
     --engine_dir /workspace/test_model/engine_stress \
@@ -272,14 +275,15 @@ python prepare_dataset.py \
     --concurrency 32 \
     --warm_up 10
 ```
-🌡️ Monitor GPU Usage:
+
 ### Monitor GPU utilization during tests
+🌡️ Monitor GPU Usage:
 ```
 watch -n 1 nvidia-smi
 ```
 
-⚡ Multi-GPU Test (if supported):
 ### Check if we can use both GPUs
+⚡ Multi-GPU Test (if supported):
 ```
 CUDA_VISIBLE_DEVICES=0,1 /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
     --engine_dir /workspace/test_model/engine_stress \
