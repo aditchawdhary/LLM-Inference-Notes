@@ -221,6 +221,82 @@ trtllm-build \
     --context_fmha enable \
     --remove_input_padding enable
 ```
+<details>
+  <summary>RAW Output</summary>
+  2025-08-27 08:22:19,541 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
+  [TensorRT-LLM] TensorRT-LLM version: 0.20.0
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set bert_attention_plugin to auto.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set gpt_attention_plugin to float16.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set gemm_plugin to float16.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set gemm_swiglu_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set fp8_rowwise_gemm_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set nccl_plugin to auto.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set lora_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set dora_plugin to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set moe_plugin to auto.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set mamba_conv1d_plugin to auto.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set low_latency_gemm_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set low_latency_gemm_swiglu_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set gemm_allreduce_plugin to None.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set context_fmha to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set bert_context_fmha_fp32_acc to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set remove_input_padding to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set norm_quant_fusion to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set reduce_fusion to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set user_buffer to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set tokens_per_block to 32.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set use_paged_context_fmha to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set use_fp8_context_fmha to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set fuse_fp4_quant to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set multiple_profiles to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set paged_state to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set streamingllm to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set use_fused_mlp to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set pp_reduce_scatter to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set dtype to float16.
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set paged_kv_cache to True.
+  [08/27/2025-08:22:19] [TRT-LLM] [W] Overriding paged_state to False
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set paged_state to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [W] max_seq_len 4096 is larger than max_position_embeddings 1024 * rotary scaling 1, the model accuracy might be affected
+  [08/27/2025-08:22:19] [TRT-LLM] [W] remove_input_padding is enabled, while opt_num_tokens is not set, setting to max_batch_size*max_beam_width. 
+  
+  [08/27/2025-08:22:19] [TRT-LLM] [W] Specifying a `max_num_tokens` larger than 16384 is usually not recommended, we do not expect perf gain with that and too large `max_num_tokens` could possibly exceed the TensorRT tensor volume, causing runtime errors. Got `max_num_tokens` = 32768
+  [08/27/2025-08:22:19] [TRT-LLM] [W] padding removal and fMHA are both enabled, max_input_len is not required and will be ignored
+  [08/27/2025-08:22:19] [TRT-LLM] [I] Set use_fp8_context_fmha to False.
+  [08/27/2025-08:22:19] [TRT-LLM] [W] FP8 Context FMHA is disabled because it must be used together with the fp8 quantization workflow.
+  [08/27/2025-08:22:20] [TRT] [I] [MemUsageChange] Init CUDA: CPU +26, GPU +0, now: CPU 296, GPU 424 (MiB)
+  [08/27/2025-08:22:21] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +1639, GPU +8, now: CPU 2136, GPU 432 (MiB)
+  [08/27/2025-08:22:21] [TRT-LLM] [I] Set nccl_plugin to None.
+  [08/27/2025-08:22:22] [TRT-LLM] [I] Total time of constructing network from module object 2.3651156425476074 seconds
+  [08/27/2025-08:22:22] [TRT-LLM] [I] Total optimization profiles added: 1
+  [08/27/2025-08:22:22] [TRT-LLM] [I] Total time to initialize the weights in network Unnamed Network 0: 00:00:00
+  [08/27/2025-08:22:22] [TRT-LLM] [I] Build TensorRT engine Unnamed Network 0
+  [08/27/2025-08:22:25] [TRT] [I] Global timing cache in use. Profiling results in this builder pass will be stored.
+  [08/27/2025-08:22:25] [TRT] [I] Compiler backend is used during engine build.
+  [08/27/2025-08:22:28] [TRT] [I] Detected 17 inputs and 1 output network tensors.
+  [08/27/2025-08:22:30] [TRT] [I] Total Host Persistent Memory: 36544 bytes
+  [08/27/2025-08:22:30] [TRT] [I] Total Device Persistent Memory: 0 bytes
+  [08/27/2025-08:22:30] [TRT] [I] Max Scratch Memory: 105548288 bytes
+  [08/27/2025-08:22:30] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 210 steps to complete.
+  [08/27/2025-08:22:30] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 10.6115ms to assign 18 blocks to 210 nodes requiring 503421440 bytes.
+  [08/27/2025-08:22:30] [TRT] [I] Total Activation Memory: 503420928 bytes
+  [08/27/2025-08:22:30] [TRT] [I] Total Weights Memory: 326085504 bytes
+  [08/27/2025-08:22:30] [TRT] [I] Compiler backend is used during engine execution.
+  [08/27/2025-08:22:30] [TRT] [I] Engine generation completed in 5.37531 seconds.
+  [08/27/2025-08:22:30] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 385 MiB
+  [08/27/2025-08:22:30] [TRT-LLM] [I] Total time of building Unnamed Network 0: 00:00:08
+  [08/27/2025-08:22:30] [TRT] [I] Serialized 27 bytes of code generator cache.
+  [08/27/2025-08:22:30] [TRT] [I] Serialized 153518 bytes of compilation cache.
+  [08/27/2025-08:22:30] [TRT] [I] Serialized 12 timing cache entries
+  [08/27/2025-08:22:30] [TRT-LLM] [I] Timing cache serialized to model.cache
+  [08/27/2025-08:22:30] [TRT-LLM] [I] Build phase peak memory: 6978.95 MB, children: 12049.21 MB
+  [08/27/2025-08:22:31] [TRT-LLM] [I] Serializing engine to /workspace/test_model/engine_stress/rank0.engine...
+  [08/27/2025-08:22:31] [TRT-LLM] [I] Engine serialized. Total time: 00:00:00
+  [08/27/2025-08:22:31] [TRT-LLM] [I] Total time of building all engines: 00:00:11
+
+</details>
+
+
 ### Create large dataset for stress testing
 📊 Create Massive Stress Test Dataset:
 ```
