@@ -223,7 +223,8 @@ trtllm-build \
 ```
 <details>
   <summary>RAW Output</summary>
-  ```
+  
+  ```bash
   2025-08-27 08:22:19,541 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
   [TensorRT-LLM] TensorRT-LLM version: 0.20.0
   [08/27/2025-08:22:19] [TRT-LLM] [I] Set bert_attention_plugin to auto.
