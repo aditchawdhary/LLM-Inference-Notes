@@ -11,6 +11,7 @@ LLM inference notes
 5. 1x RTX 5090
 6. 1x H200 - France
 7. 1x H100 SXM
+8. 2x A100 SXM4 with 80GB VRAM each
  
 <details>
   <summary>[RAW] Commands for installation:</summary>
@@ -200,3 +201,99 @@ c.NotebookApp.password = '\'''\'';EOF;;# Start Jupyter in background;nohup jupyt
 <img width="175" height="200" alt="image" src="https://github.com/user-attachments/assets/578e4ac5-5873-49cd-97ed-6ed7369e38a2" />
 <img width="175" height="235" alt="image" src="https://github.com/user-attachments/assets/450a41d0-9a12-426a-ba80-348e0ff09557" />
 
+
+🔥🔥🔥🔥🔥🔥
+
+### Build engine optimized for dual A100s with maximum throughput
+🚀 Build High-Performance Engine for Stress Testing:
+```
+trtllm-build \
+    --checkpoint_dir /workspace/test_model/checkpoint \
+    --output_dir /workspace/test_model/engine_stress \
+    --gemm_plugin float16 \
+    --gpt_attention_plugin float16 \
+    --max_batch_size 64 \
+    --max_input_len 2048 \
+    --max_seq_len 4096 \
+    --max_beam_width 1 \
+    --max_num_tokens 32768 \
+    --use_fused_mlp enable \
+    --context_fmha enable \
+    --remove_input_padding enable
+```
+### Create large dataset for stress testing
+📊 Create Massive Stress Test Dataset:
+```
+python prepare_dataset.py \
+    --tokenizer gpt2 \
+    --output /workspace/stress_dataset.json \
+    token-norm-dist \
+    --num-requests 10000 \
+    --input-mean 1024 \
+    --input-stdev 256 \
+    --output-mean 512 \
+    --output-stdev 128
+```
+1. Maximum Throughput Test:
+🔥 Extreme Stress Tests:
+### Push maximum concurrent requests
+```
+/app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
+    --engine_dir /workspace/test_model/engine_stress \
+    --type inflight \
+    --dataset /workspace/stress_dataset.json \
+    --max_num_samples 5000 \
+    --request_rate 200.0 \
+    --concurrency 64 \
+    --log_level info \
+    --log_iteration_data
+```
+2. Memory Pressure Test:
+### Test with maximum batch size and long sequences
+```
+/app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
+    --engine_dir /workspace/test_model/engine_stress \
+    --type inflight \
+    --dataset /workspace/stress_dataset.json \
+    --max_num_samples 10000 \
+    --max_batch_size 64 \
+    --enable_batch_size_tuning \
+    --log_level info
+```
+3. Sustained Load Test:
+### Long-running sustained load
+```
+/app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
+    --engine_dir /workspace/test_model/engine_stress \
+    --type inflight \
+    --dataset /workspace/stress_dataset.json \
+    --max_num_samples 20000 \
+    --request_rate 100.0 \
+    --concurrency 32 \
+    --warm_up 10
+```
+🌡️ Monitor GPU Usage:
+### Monitor GPU utilization during tests
+```
+watch -n 1 nvidia-smi
+```
+
+⚡ Multi-GPU Test (if supported):
+### Check if we can use both GPUs
+```
+CUDA_VISIBLE_DEVICES=0,1 /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
+    --engine_dir /workspace/test_model/engine_stress \
+    --type inflight \
+    --dataset /workspace/stress_dataset.json \
+    --max_num_samples 5000 \
+    --request_rate 300.0 \
+    --concurrency 128
+```
+Let's start with building the high-performance engine first. This will take advantage of your dual A100s and really push the batch manager to its limits!
+
+The goal is to:
+
+Max out GPU utilization (get those temps up! 🌡️)
+Test batch manager scalability with high concurrency
+Push memory limits with large batches
+Measure peak throughput your hardware can achieve
