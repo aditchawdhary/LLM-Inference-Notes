@@ -223,6 +223,7 @@ trtllm-build \
 ```
 <details>
   <summary>RAW Output</summary>
+  ```
   2025-08-27 08:22:19,541 - INFO - flashinfer.jit: Prebuilt kernels not found, using JIT backend
   [TensorRT-LLM] TensorRT-LLM version: 0.20.0
   [08/27/2025-08:22:19] [TRT-LLM] [I] Set bert_attention_plugin to auto.
@@ -293,7 +294,7 @@ trtllm-build \
   [08/27/2025-08:22:31] [TRT-LLM] [I] Serializing engine to /workspace/test_model/engine_stress/rank0.engine...
   [08/27/2025-08:22:31] [TRT-LLM] [I] Engine serialized. Total time: 00:00:00
   [08/27/2025-08:22:31] [TRT-LLM] [I] Total time of building all engines: 00:00:11
-
+  ```
 </details>
 
 
