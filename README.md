@@ -471,3 +471,67 @@ Max out GPU utilization (get those temps up! 🌡️)
 Test batch manager scalability with high concurrency
 Push memory limits with large batches
 Measure peak throughput your hardware can achieve
+
+```
+# If you want MAXIMUM; 💥 Nuclear Option - 4 Instances (2 per GPU):
+for gpu in 0 1; do
+    for instance in 1 2; do
+        CUDA_VISIBLE_DEVICES=$gpu /app/tensorrt_llm/benchmarks/cpp/gptManagerBenchmark \
+            --engine_dir /workspace/test_model/engine_stress \
+            --type inflight \
+            --dataset /workspace/stress_dataset.json \
+            --max_num_samples 2500 \
+            --request_rate 150.0 \
+            --log_level error &
+    done
+done
+```
+<img width="900" height="306" alt="image" src="https://github.com/user-attachments/assets/932828bf-5755-4f2e-82d9-a16deff3c96d" />
+OUTPUT:
+[BENCHMARK] num_samples 2500
+[BENCHMARK] num_error_samples 0
+
+[BENCHMARK] num_samples 2500
+[BENCHMARK] total_latency(ms) 81970.45
+[BENCHMARK] seq_throughput(seq/sec) 30.50
+[BENCHMARK] token_throughput(token/sec) 15672.87
+[BENCHMARK] avg_acceptance_rate(tokens/decoding steps) 1.00
+
+[BENCHMARK] avg_sequence_latency(ms) 34195.29
+[BENCHMARK] max_sequence_latency(ms) 66902.80
+[BENCHMARK] min_sequence_latency(ms) 778.81
+[BENCHMARK] p99_sequence_latency(ms) 66332.86
+[BENCHMARK] p90_sequence_latency(ms) 60695.08
+[BENCHMARK] p50_sequence_latency(ms) 34129.66
+
+[BENCHMARK] num_samples 2500
+[BENCHMARK] num_error_samples 0
+
+[BENCHMARK] num_samples 2500
+[BENCHMARK] total_latency(ms) 184821.02
+[BENCHMARK] seq_throughput(seq/sec) 13.53
+[BENCHMARK] token_throughput(token/sec) 6951.11
+[BENCHMARK] avg_acceptance_rate(tokens/decoding steps) 1.00
+
+[BENCHMARK] avg_sequence_latency(ms) 86171.27
+[BENCHMARK] max_sequence_latency(ms) 169654.69
+[BENCHMARK] min_sequence_latency(ms) 1822.40
+[BENCHMARK] p99_sequence_latency(ms) 167939.34
+[BENCHMARK] p90_sequence_latency(ms) 153332.48
+[BENCHMARK] p50_sequence_latency(ms) 86028.87
+
+[BENCHMARK] num_samples 2500
+[BENCHMARK] num_error_samples 0
+
+[BENCHMARK] num_samples 2500
+[BENCHMARK] total_latency(ms) 192773.70
+[BENCHMARK] seq_throughput(seq/sec) 12.97
+[BENCHMARK] token_throughput(token/sec) 6664.35
+[BENCHMARK] avg_acceptance_rate(tokens/decoding steps) 1.00
+
+[BENCHMARK] avg_sequence_latency(ms) 95497.55
+[BENCHMARK] max_sequence_latency(ms) 177765.50
+[BENCHMARK] min_sequence_latency(ms) 1830.76
+[BENCHMARK] p99_sequence_latency(ms) 177170.33
+[BENCHMARK] p90_sequence_latency(ms) 170575.42
+[BENCHMARK] p50_sequence_latency(ms) 96085.57
