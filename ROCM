@@ -1,0 +1,5 @@
+# Installing VLLM on Rocm hardware
+
+- MI 300x1-192gb
+- Running https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning/tree/main
+- https://docs.vllm.ai/en/v0.6.5/getting_started/amd-installation.html
