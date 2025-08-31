@@ -6,7 +6,9 @@
 
 1. For installing PyTorch, you can start from a fresh docker image,
 ```
-sudo docker run -it \
+sudo docker run -d \
+  --name rocm-pytorch \
+  --restart unless-stopped \
   --cap-add=SYS_PTRACE \
   --security-opt seccomp=unconfined \
   --device=/dev/kfd \
@@ -14,7 +16,8 @@ sudo docker run -it \
   --group-add video \
   --ipc=host \
   --shm-size 80G \
-  rocm/pytorch:rocm6.2_ubuntu20.04_py3.9_pytorch_release_2.3.0
+  rocm/pytorch:rocm6.2_ubuntu20.04_py3.9_pytorch_release_2.3.0 \
+  tail -f /dev/null
 ```
 
 2. Install Triton flash attention for ROCm
