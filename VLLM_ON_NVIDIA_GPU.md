@@ -1,6 +1,13 @@
 # Running VLLM on Vast.AI
 
 ```
+watch nvidia-smi
+# This command will refresh the nvidia-smi output every two seconds by default, providing a dynamic view of GPU activity. To exit the live feed, press Ctrl+C.
+top
+# Provides live updates of system statistics, including CPU and memory consumption.
+```
+
+```
 conda create -n vllm-phi4flash-test python=3.10 -y
 conda activate vllm-phi4flash-test
 ```
