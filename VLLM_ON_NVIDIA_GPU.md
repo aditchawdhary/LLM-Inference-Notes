@@ -41,57 +41,6 @@ VLLM_USE_PRECOMPILED=0 pip install -e . --verbose --no-build-isolation
 
 
 ```
- 1  git clone https://github.com/vllm-project/vllm.git
-    2  cd vllm
-    3  git fetch origin pull/23996/head:pr-23996
-    4  git checkout pr-23996
-    5  pip install -e .
-    6  python --version
-    7  # Always activate before running tests
-    8  conda activate vllm-pr-test
-    9  # Verify you're in the right environment
-   10  which python
-   11  python --version
-   12  conda create -n vllm-phi4flash-test python=3.10 -y
-   13  conda activate vllm-phi4flash-test
-   14  python --version
-   15  git clone https://github.com/vllm-project/vllm.git
-   16  cd vllm
-   17  la
-   18  ls
-   19  pwd
-   20  cd ..
-   21  cd .
-   22  cd..
-   23  ls
-   24  cd ..
-   25  ls
-   26  cd vllm
-   27  ls
-   28  git init
-   29  git fetch origin pull/23996/head:pr-23996-phi4flash
-   30  git checkout pr-23996-phi4flash
-   31  git branch -v
-   32  git log --oneline -n 5
-   33  git diff HEAD~1 --name-only | grep -iE "(phi|flash)" || echo "Checking for model-related changes..."
-   34  git diff HEAD~1 --name-only | grep -E "(model|config)" | head -5
-   35  pip list | grep torch
-   36  pip list 
-   37  nvcc --version
-   38  pip3 install -r requirements-build.txt
-   39  pip3 install -r requirements/requirements-build.txt
-   40  cd requirements/
-   41  ls
-   42  pip3 install -r build.txt
-   43  pip list
-   44  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-   45  pip list
-   46  VLLM_USE_PRECOMPILED=0 pip install -e . --verbose --no-build-isolation
-   47  cd ..
-   48  VLLM_USE_PRECOMPILED=0 pip install -e . --verbose --no-build-isolation
-   49  pip install -e . --verbose  # Much faster - uses precompiled binaries
-   50  VLLM_USE_PRECOMPILED=1 pip install -e . --verbose 
-   51  export VLLM_USE_V1=1
    52  python3 << 'EOF'
 from vllm import LLM, SamplingParams
 
