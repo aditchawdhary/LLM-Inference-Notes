@@ -34,15 +34,13 @@ You can also run individual CI hooks:
 
 
 
-# Run mypy for specific Python versions (like CI does)
+### Run mypy for specific Python versions (like CI does)
 
 pre-commit run mypy-3.11 --all-files
 
 pre-commit run mypy-3.12 --all-files
 
-# Run markdown linting (like CI does)
-
-pre-commit run markdownlint --all-files
+### Run markdown linting (like CI does)
 
 ```
 pip install pre-commit yapf ruff isort mypy
