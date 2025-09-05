@@ -23,26 +23,26 @@ Custom operations and kernels: The use of @CustomOp.register indicates that vLLM
 
 Ref:
 1.
-  1. https://medium.com/@zergtant/mamba-2-innovation-state-space-expanded-by-8x-and-training-speed-increased-by-50-structured-94aa302bcb2e#:~:text=Tensor%20Parallelism%20and%20Hardware%20Efficiency,SSMs%20and%20traditional%20attention%20mechanisms.
-  2. https://developers.redhat.com/articles/2025/02/06/distributed-inference-with-vllm#:~:text=Tensor%20parallelism%20to%20shard%20each,overhead%20and%20maximize%20GPU%20utilization.
-  3. https://arxiv.org/html/2407.19832v3#:~:text=In%20recent%20months%2C%20a%20new,with%20Transformers%20in%20language%20modeling.
+    1. https://medium.com/@zergtant/mamba-2-innovation-state-space-expanded-by-8x-and-training-speed-increased-by-50-structured-94aa302bcb2e#:~:text=Tensor%20Parallelism%20and%20Hardware%20Efficiency,SSMs%20and%20traditional%20attention%20mechanisms.
+    2. https://developers.redhat.com/articles/2025/02/06/distributed-inference-with-vllm#:~:text=Tensor%20parallelism%20to%20shard%20each,overhead%20and%20maximize%20GPU%20utilization.
+    3. https://arxiv.org/html/2407.19832v3#:~:text=In%20recent%20months%2C%20a%20new,with%20Transformers%20in%20language%20modeling.
 
 2.
-  1. https://huggingface.co/docs/transformers/model_doc/mamba2#:~:text=This%20model%20was%20released%20on,model%20was%20contributed%20by%20ArthurZ.
-  2. https://docs.vllm.ai/en/latest/api/vllm/model_executor/layers/mamba/mamba_mixer2.html#:~:text=weights%2C%20we%20%23%20need%20to%20interleave%20them,shards%20group_shard_settings%20=%20(%20self.n_groups%20*%20self.ssm_state_size%2C
-  3. https://github.com/AI-App/VLLM-Project.VLLM
+    1. https://huggingface.co/docs/transformers/model_doc/mamba2#:~:text=This%20model%20was%20released%20on,model%20was%20contributed%20by%20ArthurZ.
+    2. https://docs.vllm.ai/en/latest/api/vllm/model_executor/layers/mamba/mamba_mixer2.html#:~:text=weights%2C%20we%20%23%20need%20to%20interleave%20them,shards%20group_shard_settings%20=%20(%20self.n_groups%20*%20self.ssm_state_size%2C
+    3. https://github.com/AI-App/VLLM-Project.VLLM
 
 3.
-  1. https://www.youtube.com/watch?v=McLdlg5Gc9s
-  2. https://tridao.me/blog/2024/mamba2-part1-model/#:~:text=SSD:%20Scalar%20Structured%20SSM,a%20t%20a_t%20at%20).
-  3. https://www.youtube.com/watch?v=d370WztS7kA&t=37
-  4. https://insujang.github.io/2024-01-11/tensor-parallelism-and-sequence-parallelism-detailed-analysis/#:~:text=Tensor%20model%20parallelism%20splits%20and%20distributes%20model,k_proj%20%2C%20v_proj%20%2C%20and%20out_proj%20.
-  5. https://pli.princeton.edu/blog/2024/mamba-2-algorithms-and-systems
-  6. https://nm-vllm.readthedocs.io/_/downloads/en/0.3.0/pdf/#:~:text=vLLM%20is%20a%20fast%20and,NVIDIA%20GPUs%20and%20AMD%20GPUs
+    1. https://www.youtube.com/watch?v=McLdlg5Gc9s
+    2. https://tridao.me/blog/2024/mamba2-part1-model/#:~:text=SSD:%20Scalar%20Structured%20SSM,a%20t%20a_t%20at%20).
+    3. https://www.youtube.com/watch?v=d370WztS7kA&t=37
+    4. https://insujang.github.io/2024-01-11/tensor-parallelism-and-sequence-parallelism-detailed-analysis/#:~:text=Tensor%20model%20parallelism%20splits%20and%20distributes%20model,k_proj%20%2C%20v_proj%20%2C%20and%20out_proj%20.
+    5. https://pli.princeton.edu/blog/2024/mamba-2-algorithms-and-systems
+    6. https://nm-vllm.readthedocs.io/_/downloads/en/0.3.0/pdf/#:~:text=vLLM%20is%20a%20fast%20and,NVIDIA%20GPUs%20and%20AMD%20GPUs
 
 4.
-  1. https://docs.vllm.ai/en/latest/api/vllm/model_executor/layers/mamba/mamba_mixer2.html#:~:text=weights%2C%20we%20%23%20need%20to%20interleave%20them,shards%20group_shard_settings%20=%20(%20self.n_groups%20*%20self.ssm_state_size%2C
-  2. https://docs.vllm.ai/en/latest/api/vllm/model_executor/models/mamba.html
+    1. https://docs.vllm.ai/en/latest/api/vllm/model_executor/layers/mamba/mamba_mixer2.html#:~:text=weights%2C%20we%20%23%20need%20to%20interleave%20them,shards%20group_shard_settings%20=%20(%20self.n_groups%20*%20self.ssm_state_size%2C
+    2. https://docs.vllm.ai/en/latest/api/vllm/model_executor/models/mamba.html
 
 
 
